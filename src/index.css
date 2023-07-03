@@ -37,6 +37,14 @@ nav{
     bottom: unset;
   }
 }
+.bsk{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
 .basket-list{
   position: fixed;
   top: 50%;
@@ -46,6 +54,7 @@ nav{
   width: 50rem;
   max-width: 95%;
   box-shadow: 0 6px 15px 0 rgba(0, 0, 0, .5);
+  animation: show .5s ease-in-out;
 }
 .basket-close{
   cursor: pointer;
@@ -56,5 +65,15 @@ nav{
 }
 .basket-delete{
   cursor: pointer;
-  
+}
+
+@keyframes show {
+  from{
+    top: 70%;
+    opacity: 0;
+  }
+  to{
+    top: 50%;
+    opacity: 1;
+  }
 }

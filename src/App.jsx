@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Shop from './components/Shop'
 import { ToastContainer } from 'react-toastify'
+import { ContextProvider } from './context'
 
 function App() {
 
@@ -10,7 +11,9 @@ function App() {
     <>
       <ToastContainer />
       <Header />
-      <Shop />
+      <ContextProvider>
+        <Shop />
+      </ContextProvider>
       <Footer />
     </>
   )

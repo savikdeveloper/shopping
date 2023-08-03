@@ -1,24 +1,22 @@
-import { useContext } from "react";
-import { ShopContext } from "../context";
-
 export default function(props) {
   const {id, name, price, quantity, incrementQuantity, decrementQuantity} = props;
-  const {example} = useContext(ShopContext);
-  console.log(example);
   return(
     <li className="collection-item">
-      {name} x {quantity} = {price * quantity} <b>$</b>
+      {name} x{quantity} = {price * quantity} <b>$</b>
       <span className="secondary-content">
-        <a className="waves-effect waves-light btn btn_q" onClick={() => incrementQuantity(id)}>
-          <i className="material-icons left">add_circle</i>
-          add
+        <a className="waves-effect waves-light btn btnq" onClick={() => incrementQuantity(id)}>
+          <i className="material-icons left">exposure_plus_1</i>add
         </a>
-        <a className="waves-effect waves-light btn btn_q" style={{marginLeft: 10}} onClick={() => decrementQuantity(id)}>
-          <i className="material-icons left">remove_circle</i>
-          remove
+        <a
+          className="waves-effect waves-light btn btnq"
+          onClick={() => decrementQuantity(id)}
+        style={{margin: '0px 10px'}}>
+          <i className="material-icons left">exposure_minus_1</i>remove
         </a>
-        <a className="waves-effect waves-light btn btn_q" style={{marginLeft: 10}}    onClick={() => props.removeFromBasket(id)}>
-          <i className="material-icons basket-delete">delete_forever</i>
+        <a className='waves-effect waves-light btn btnq'
+           onClick={() => props.removeFromBasket(id)}
+        >
+          <i className="material-icons basket-delete">delete_forever</i> delete
         </a>
       </span>
     </li>
